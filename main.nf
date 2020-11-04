@@ -75,7 +75,7 @@ params.outExpDes = './experimentalDesign.txt'
 params.name = false
 params.email = false
 params.plaintext_email = false
-if (params.profile == test){
+if (params.profile == "test"){
     params.raws = "$basedir/params.raws"
     params.fasta = "$basedir/params.fasta"
 }
