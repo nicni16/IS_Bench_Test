@@ -152,10 +152,10 @@ process run_maxquant {
     script:
     """
     maxquant ${mqparameters}
-    
+    cp -R "$rawsPlaceHolder"/combined/txt/* "$baseDir/results/"
     """        
 }
-//cp -R "$rawsPlaceHolder"/combined/txt/* "$baseDir/results/"
+
 
 
 workflow.onComplete {
