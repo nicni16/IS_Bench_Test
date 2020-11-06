@@ -66,6 +66,19 @@ params.outPara ='./parameters.xml'
 params.outExpDes = './experimentalDesign.txt'
 
 
+
+// Setup for the test environment
+if (params.prof ==~ 'test'){
+    rawsPlaceHolder = "$baseDir/$params.raws"
+    fastaPlaceHolder = "$baseDir/$params.fasta"
+}
+else {
+    rawsPlaceHolder = "$params.raws"
+    fastaPlaceHolder = "$params.fasta"
+}
+
+
+
 /*
  * SET UP CONFIGURATION VARIABLES
  */
@@ -90,7 +103,7 @@ if( !(workflow.runName ==~ /[a-z]+_[a-z]+/) ){
 * Generate the channels for the raw files
 */ 
 Channel 
-    .fromPath (params.raws).into {input_raw; input_raw2}
+    .fromPath (rawsPlaceHolder).into {input_raw; input_raw2}
 
 /*
 * Generate the channels for the sdrf files
@@ -102,7 +115,7 @@ Channel
 * Generate the channels for the fasta file
 */ 
 Channel
-    .fromPath (params.fasta).into {input_fasta; input_fasta2}
+    .fromPath (fastaPlaceHolder).into {input_fasta; input_fasta2}
 
 
 
@@ -110,6 +123,7 @@ Channel
 * STEP 1 - Generate the parameter and experimental design for maxquant through sdrf
 */
 process run_sdrf {
+     echo true
     publishDir "${params.outdir}"
     input: 
         path sdrf_file from input_sdrf
@@ -121,7 +135,15 @@ process run_sdrf {
 
     script: 
     """
-    parse_sdrf convert-maxquant -s ${sdrf_file} -f ${params.fasta} -m ${params.match} -pef ${params.peptidefdr} -prf ${params.proteinfdr} -t ${params.tempfol} -r ${params.raws} -n ${params.numthreads} -o1 ${params.outPara} -o2 ${params.outExpDes}
+   
+    echo "Test"
+    echo "fasta" ${params.fasta}
+    echo "raws" ${params.raws}
+    echo "profile" "${params.prof}"
+    echo "raws changed" $rawsPlaceHolder
+    echo "fasta changed" $fastaPlaceHolder
+    echo "end"
+    parse_sdrf convert-maxquant -s ${sdrf_file} -f $fastaPlaceHolder -m ${params.match} -pef ${params.peptidefdr} -prf ${params.proteinfdr} -t ${params.tempfol} -r $rawsPlaceHolder -n ${params.numthreads} -o1 ${params.outPara} -o2 ${params.outExpDes}
     """
 }
 
@@ -139,7 +161,7 @@ process run_maxquant {
     script:
     """
     maxquant ${mqparameters}
-    cp -R "${params.raws}"/combined/txt/* "$baseDir/results/"
+    cp -R "$rawsPlaceHolder"/combined/txt/* "$baseDir/results/"
     """        
 }
 
