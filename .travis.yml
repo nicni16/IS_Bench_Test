@@ -1,0 +1,22 @@
+sudo: required
+
+language: groovy
+
+jdk:
+  - openjdk8
+
+services:
+  - docker
+
+before_install:
+  - sudo apt-get -qq update
+  - sudo apt-get -qq -y install graphviz
+  - sudo pip install awscli
+
+install:
+  - sudo apt-get install -y realpath
+  - curl -fsSL get.nextflow.io | bash
+  - mkdir -p ~/bin; cp nextflow ~/bin
+
+script: 
+- nextflow run main.nf -profile test
