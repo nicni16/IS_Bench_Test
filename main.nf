@@ -59,7 +59,7 @@ params.tempfol = params.tempfol ?: { log.warn "No tmp directory provided. Will p
 */
 
 // SDRF parameters
-params.numthreads = 2
+params.numthreads = 1
 params.peptidefdr = 0.01
 params.proteinfdr = 0.01
 params.outPara ='./parameters.xml'
