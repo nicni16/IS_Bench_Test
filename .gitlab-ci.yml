@@ -1,0 +1,3 @@
+default:
+  interruptible: false 
+  image: lnkn/maxquanti:v4
