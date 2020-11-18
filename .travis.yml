@@ -11,9 +11,9 @@ before_install:
   - sudo apt-get -qq update
   - sudo apt-get -qq -y install graphviz
   - sudo pip install awscli
-  - sudo sysctl -w vm.max_map_count=655350
 
 install:
+  - sudo sysctl -w vm.max_map_count=655350
   - curl -fsSL get.nextflow.io | bash
   - mkdir -p ~/bin; cp nextflow ~/bin
 
