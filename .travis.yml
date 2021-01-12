@@ -18,4 +18,5 @@ install:
   - mkdir -p ~/bin; cp nextflow ~/bin
 
 script: 
+- ls
 - nextflow run main.nf -profile test
