@@ -18,5 +18,4 @@ install:
   - mkdir -p ~/bin; cp nextflow ~/bin
 
 script: 
-- ls
-- nextflow run main.nf -profile test
+- nextflow run main.nf -profile test  --max_cpus 8 --max_memory 16GB 
