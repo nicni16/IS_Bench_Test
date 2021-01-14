@@ -1,0 +1,96 @@
+Jan-14 09:29:58.173 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main.nf -profile test
+Jan-14 09:29:58.319 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 20.04.1
+Jan-14 09:29:58.339 [main] INFO  nextflow.cli.CmdRun - Launching `main.nf` [tiny_morse] - revision: e34555b0db
+Jan-14 09:29:58.373 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /tmp/IS_Bench_Test/nextflow.config
+Jan-14 09:29:58.374 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /tmp/IS_Bench_Test/nextflow.config
+Jan-14 09:29:58.416 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `test`
+Jan-14 09:29:59.135 [main] DEBUG nextflow.config.ConfigBuilder - Available config profiles: [debug, test, conda, awsbatch, singularity, docker]
+Jan-14 09:29:59.206 [main] DEBUG nextflow.Session - Session uuid: 9993928f-62ee-4f61-a552-ae53206f6db4
+Jan-14 09:29:59.206 [main] DEBUG nextflow.Session - Run name: tiny_morse
+Jan-14 09:29:59.207 [main] DEBUG nextflow.Session - Executor pool size: 12
+Jan-14 09:29:59.282 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 20.04.1 build 5335
+  Created: 03-05-2020 19:37 UTC (21:37 CEST)
+  System: Linux 5.4.0-58-generic
+  Runtime: Groovy 2.5.8 on OpenJDK 64-Bit Server VM 11.0.9.1+1-Ubuntu-0ubuntu1.20.04
+  Encoding: UTF-8 (UTF-8)
+  Process: 587070@adm-125488 [127.0.0.1]
+  CPUs: 12 - Mem: 31.2 GB (1.9 GB) - Swap: 976 MB (774.6 MB)
+Jan-14 09:29:59.319 [main] DEBUG nextflow.Session - Work-dir: /tmp/IS_Bench_Test/work [ext2/ext3]
+Jan-14 09:29:59.319 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /tmp/IS_Bench_Test/bin
+Jan-14 09:29:59.362 [main] DEBUG nextflow.Session - Observer factory: TowerFactory
+Jan-14 09:29:59.366 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Jan-14 09:29:59.623 [main] DEBUG nextflow.Session - Session start invoked
+Jan-14 09:29:59.997 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Jan-14 09:30:00.017 [main] DEBUG nextflow.Session - Workflow process names [dsl1]: run_maxquant, run_sdrf
+Jan-14 09:30:00.021 [main] WARN  nextflow.script.ScriptBinding - Access to undefined parameter `match` -- Initialise it to a default value eg. `params.match = some_value`
+Jan-14 09:30:00.038 [main] WARN  nextflow.Nextflow - No match choice. Make sure to choose and write '--match'
+Jan-14 09:30:00.039 [main] WARN  nextflow.script.ScriptBinding - Access to undefined parameter `tempfol` -- Initialise it to a default value eg. `params.tempfol = some_value`
+Jan-14 09:30:00.040 [main] WARN  nextflow.Nextflow - No tmp directory provided. Will put the tmp into './tmp'
+Jan-14 09:30:00.218 [PathVisitor-1] DEBUG nextflow.file.PathVisitor - files for syntax: glob; folder: data/; pattern: *.tsv; options: [:]
+Jan-14 09:30:00.384 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+Jan-14 09:30:00.384 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jan-14 09:30:00.394 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Jan-14 09:30:00.405 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=8; memory=1 GB; capacity=10; pollInterval=100ms; dumpInterval=5m
+Jan-14 09:30:00.603 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+Jan-14 09:30:00.604 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jan-14 09:30:00.627 [main] DEBUG nextflow.script.ScriptRunner - > Await termination 
+Jan-14 09:30:00.627 [main] DEBUG nextflow.Session - Session await
+Jan-14 09:30:00.942 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jan-14 09:30:00.953 [Task submitter] INFO  nextflow.Session - [d8/6e7764] Submitted process > run_sdrf (1)
+Jan-14 09:30:04.488 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: run_sdrf (1); status: COMPLETED; exit: 0; error: -; workDir: /tmp/IS_Bench_Test/work/d8/6e77642cf9e6a85751d9a4528d6a07]
+Jan-14 09:30:04.525 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jan-14 09:30:04.525 [Task submitter] INFO  nextflow.Session - [27/1c290d] Submitted process > run_maxquant (1)
+Jan-14 09:30:16.881 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 2; name: run_maxquant (1); status: COMPLETED; exit: 1; error: -; workDir: /tmp/IS_Bench_Test/work/27/1c290d8d1e94cfd6d344918ab10e8b]
+Jan-14 09:30:16.935 [Task monitor] ERROR nextflow.processor.TaskProcessor - Error executing process > 'run_maxquant (1)'
+
+Caused by:
+  Process `run_maxquant (1)` terminated with an error exit status (1)
+
+Command executed:
+
+  maxquant parameters.xml
+  cp -R "/tmp/IS_Bench_Test/data"/combined/txt/* "/tmp/IS_Bench_Test/results/"
+
+Command exit status:
+  1
+
+Command output:
+  Configuring 
+  Testing fasta files 
+  Testing raw files 
+
+Command error:
+  WARNING: Your kernel does not support swap limit capabilities or the cgroup is not mounted. Memory limited without swap.
+  
+  Unhandled Exception:
+  System.Exception: Exception during execution of external process: 21
+    at BaseLibS.Util.WorkDispatcher.ProcessSingleRunExternalProcess (System.Int32 taskIndex, System.Int32 threadIndex) [0x001a1] in <3fc1eb7cc45041de8ce7f41aa00f3311>:0 
+    at BaseLibS.Util.WorkDispatcher.DoWork (System.Int32 taskIndex, System.Int32 threadIndex) [0x0001e] in <3fc1eb7cc45041de8ce7f41aa00f3311>:0 
+    at BaseLibS.Util.WorkDispatcher.Work (System.Object threadIndex) [0x00054] in <3fc1eb7cc45041de8ce7f41aa00f3311>:0 
+    at System.Threading.ThreadHelper.ThreadStart_Context (System.Object state) [0x00025] in <7cd4deb8302a478d9d393f24754841da>:0 
+    at System.Threading.ExecutionContext.RunInternal (System.Threading.ExecutionContext executionContext, System.Threading.ContextCallback callback, System.Object state, System.Boolean preserveSyncCtx) [0x00071] in <7cd4deb8302a478d9d393f24754841da>:0 
+    at System.Threading.ExecutionContext.Run (System.Threading.ExecutionContext executionContext, System.Threading.ContextCallback callback, System.Object state, System.Boolean preserveSyncCtx) [0x00000] in <7cd4deb8302a478d9d393f24754841da>:0 
+    at System.Threading.ExecutionContext.Run (System.Threading.ExecutionContext executionContext, System.Threading.ContextCallback callback, System.Object state) [0x0002b] in <7cd4deb8302a478d9d393f24754841da>:0 
+    at System.Threading.ThreadHelper.ThreadStart (System.Object obj) [0x0000f] in <7cd4deb8302a478d9d393f24754841da>:0 
+  [ERROR] FATAL UNHANDLED EXCEPTION: System.Exception: Exception during execution of external process: 21
+    at BaseLibS.Util.WorkDispatcher.ProcessSingleRunExternalProcess (System.Int32 taskIndex, System.Int32 threadIndex) [0x001a1] in <3fc1eb7cc45041de8ce7f41aa00f3311>:0 
+    at BaseLibS.Util.WorkDispatcher.DoWork (System.Int32 taskIndex, System.Int32 threadIndex) [0x0001e] in <3fc1eb7cc45041de8ce7f41aa00f3311>:0 
+    at BaseLibS.Util.WorkDispatcher.Work (System.Object threadIndex) [0x00054] in <3fc1eb7cc45041de8ce7f41aa00f3311>:0 
+    at System.Threading.ThreadHelper.ThreadStart_Context (System.Object state) [0x00025] in <7cd4deb8302a478d9d393f24754841da>:0 
+    at System.Threading.ExecutionContext.RunInternal (System.Threading.ExecutionContext executionContext, System.Threading.ContextCallback callback, System.Object state, System.Boolean preserveSyncCtx) [0x00071] in <7cd4deb8302a478d9d393f24754841da>:0 
+    at System.Threading.ExecutionContext.Run (System.Threading.ExecutionContext executionContext, System.Threading.ContextCallback callback, System.Object state, System.Boolean preserveSyncCtx) [0x00000] in <7cd4deb8302a478d9d393f24754841da>:0 
+    at System.Threading.ExecutionContext.Run (System.Threading.ExecutionContext executionContext, System.Threading.ContextCallback callback, System.Object state) [0x0002b] in <7cd4deb8302a478d9d393f24754841da>:0 
+    at System.Threading.ThreadHelper.ThreadStart (System.Object obj) [0x0000f] in <7cd4deb8302a478d9d393f24754841da>:0 
+
+Work dir:
+  /tmp/IS_Bench_Test/work/27/1c290d8d1e94cfd6d344918ab10e8b
+
+Tip: view the complete command output by changing to the process work dir and entering the command `cat .command.out`
+Jan-14 09:30:16.945 [main] DEBUG nextflow.Session - Session await > all process finished
+Jan-14 09:30:16.951 [Task monitor] INFO  nextflow.Session - Execution cancelled -- Finishing pending tasks before exit
+Jan-14 09:30:16.962 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Jan-14 09:30:16.967 [main] INFO  nextflow.Nextflow - Oops .. something went wrong
+Jan-14 09:30:16.981 [main] DEBUG nextflow.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=1; failedCount=1; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=3.5s; failedDuration=12.3s; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=1; peakCpus=1; peakMemory=1 GB; ]
+Jan-14 09:30:17.164 [main] DEBUG nextflow.CacheDB - Closing CacheDB done
+Jan-14 09:30:17.177 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

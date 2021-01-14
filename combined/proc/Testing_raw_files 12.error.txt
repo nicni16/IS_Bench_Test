@@ -1,0 +1,7 @@
+id	0
+start	14/01/2021 08:30:15
+title	Testing_raw_files (1/2)
+description	/tmp/IS_Bench_Test/dataOVEMB150205_12.raw
+error	/tmp/IS_Bench_Test/dataOVEMB150205_12.raw_The file '/tmp/IS_Bench_Test/dataOVEMB150205_12.raw' appears to be corrupt. Try to open it with vendor software. Error message: Error creating a RawFile instance from /tmp/IS_Bench_Test/dataOVEMB150205_12.raw:
+Path does not exist, neither as a file nor as a folder._  at MaxQuantPLibS.Basic.MaxQuantTasks.TestFile (System.Int32 taskIndex, System.String mqparFile) [0x00080] in <e0d3ea923fb542858289d68af3ae5a27>:0 _  at MaxQuantPLibS.Work.RawFileTester.Calculation (System.String[] args, BaseLibS.Util.Responder responder) [0x00009] in <e0d3ea923fb542858289d68af3ae5a27>:0 _  at MaxQuantPLibS.Work.MaxQuantWorkDispatcherUtil.PerformTask (System.Int32 taskType, System.String[] args, BaseLibS.Util.Responder responder) [0x00007] in <e0d3ea923fb542858289d68af3ae5a27>:0 _  at MaxQuantTask.Program.Function (System.String[] args, BaseLibS.Util.Responder responder) [0x00012] in <a9a7ab44566440088bf38b1365d644dc>:0 _  at Utils.Util.ExternalProcess.Run (System.String[] args, System.Boolean debug) [0x000af] in <13cd68fb3f5d4831b26fc0f070437c6f>:0 
+end	14/01/2021 08:30:16

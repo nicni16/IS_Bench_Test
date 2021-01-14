@@ -70,7 +70,7 @@ params.outExpDes = './experimentalDesign.txt'
 
 // Setup for the test environment
 if (params.prof ==~ 'test'){
-    rawsPlaceHolder = "$baseDir/$params.raws"
+    rawsPlaceHolder = "$baseDir/$params.raws/"
     fastaPlaceHolder = "$baseDir/$params.fasta"
 }
 else {

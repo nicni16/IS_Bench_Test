@@ -1,0 +1,9 @@
+2021-01-13 08:33:05	44m 18s	pedantic_ekeblad	OK	e34555b0db5f5461121a2a179f61c106	1f7402e1-05c0-4e75-b6ac-66fa72ec83ca	nextflow run main.nf -profile test
+2021-01-13 09:28:47	11.8s	romantic_montalcini	ERR	e34555b0db5f5461121a2a179f61c106	92ea6f40-abe3-4bbc-9244-12f6c65ba660	nextflow run main.nf -profile test
+2021-01-13 09:29:20	39m 20s	trusting_cantor	OK	e34555b0db5f5461121a2a179f61c106	7ebe2fbc-cc77-4222-802a-e48c5a34f460	nextflow run main.nf -profile test
+2021-01-13 11:57:12	40m 6s	nauseous_edison	OK	e34555b0db5f5461121a2a179f61c106	d4e80a99-c58d-40ae-bbea-d23e0bc76775	nextflow run main.nf -profile test
+2021-01-13 14:58:14	37m 37s	peaceful_coulomb	OK	e34555b0db5f5461121a2a179f61c106	81ca8779-99ff-4733-a22e-9e58f665d5ea	nextflow run main.nf -profile test
+2021-01-14 09:13:42	15.9s	deadly_brown	ERR	e34555b0db5f5461121a2a179f61c106	d388c717-a630-4ec7-b6c8-9767e573abe5	nextflow run main.nf -profile test
+2021-01-14 09:23:18	16.2s	elegant_pare	ERR	e34555b0db5f5461121a2a179f61c106	e14dd88f-b9a7-4886-932c-95b8d1439e81	nextflow run main.nf -profile test
+2021-01-14 09:29:59	18.2s	tiny_morse	ERR	e34555b0db5f5461121a2a179f61c106	9993928f-62ee-4f61-a552-ae53206f6db4	nextflow run main.nf -profile test
+2021-01-14 09:36:54	45m 59s	pedantic_hilbert	OK	42823eb1eb72c7b4f1ab1471177c26a7	fea40b88-16ac-4e55-8e72-dc4539b95046	nextflow run main.nf -profile test
