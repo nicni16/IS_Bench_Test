@@ -13,7 +13,6 @@ before_install:
   - sudo pip install awscli
 
 install:
-  - sudo sysctl -w vm.max_map_count=655350
   - curl -fsSL get.nextflow.io | bash
   - mkdir -p ~/bin; cp nextflow ~/bin
 
